@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    tools {
+        python 'python3'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/ateeqhonyal321/abcd'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'python3 greet.py'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                echo 'Running the file...'
+                sh 'python3 greet.py'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Build succeeded!'
+        }
+        failure {
+            echo '❌ Build failed.'
+        }
+    }
+}
