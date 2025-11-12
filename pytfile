@@ -1,14 +1,10 @@
 pipeline {
     agent any
 
-    tools {
-        python 'python3'
-    }
-
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/ateeqhonyal321/abcd'
+                git branch: 'master', url: 'https://github.com/ateeqhonyal321/abcd.git'
             }
         }
 
