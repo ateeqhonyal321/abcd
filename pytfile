@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
- stage('Run') {
+ stage('Run java') {
             steps {
                 echo 'Building...'
                 sh 'java greet'
@@ -24,7 +24,7 @@ pipeline {
 
        
 
-        stage('Run') {
+        stage('Run python') {
             steps {
                 echo 'Running the file...'
                 sh 'python3 greet.py'
