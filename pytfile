@@ -8,12 +8,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                echo 'Building...'
-                sh 'python3 greet.py'
-            }
-        }
+       
 
         stage('Run') {
             steps {
