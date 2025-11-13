@@ -8,6 +8,20 @@ pipeline {
             }
         }
 
+ stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'javac greet.java'
+            }
+        }
+
+ stage('Run') {
+            steps {
+                echo 'Building...'
+                sh 'java greet'
+            }
+        }
+
        
 
         stage('Run') {
